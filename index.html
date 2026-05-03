@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donasi HanzPiw</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Loading */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 5px solid #333;
+  border-top: 5px solid #00c6ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  padding: 40px 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RGB Profile */
+.profile {
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+  background-size: 1000% 1000%;
+  animation: rgbBorder 6s linear infinite;
+}
+
+@keyframes rgbBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+}
+
+h1 {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+img.qris {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+  </style>
+</head>
+<body><div id="loading">
+  <div class="loader"></div>
+</div><div class="container" id="main" style="display:none;">  <div class="profile">
+    <img src="https://i.ibb.co.com/998s1jr5/image.png" alt="profile">
+  </div>  <h1>💖 Donasi HanzPiw</h1>
+  <p>Dukung terus biar makin berkembang 🚀</p>  <div class="card">
+    <h2>DANA</h2>
+    <p id="dana">085191782145</p>
+    <button onclick="copyText('dana')">Salin Nomor</button>
+  </div>  <div class="card">
+    <h2>GoPay</h2>
+    <p id="gopay">082269817663</p>
+    <button onclick="copyText('gopay')">Salin Nomor</button>
+  </div>  <div class="card">
+    <h2>QRIS</h2>
+    <img class="qris" src="https://files.catbox.moe/amt8hv.jpg" alt="QRIS">
+    <p>Scan QR atau download</p>
+    <a href="https://files.catbox.moe/amt8hv.jpg" download>
+      <button>Download QRIS</button>
+    </a>
+  </div>  <footer>
+    © 2026 HanzPiw Official
+  </footer></div><script>
+
+// Loading screen
+setTimeout(() => {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+}, 1500);
+
+// Copy function
+function copyText(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert('Berhasil disalin: ' + text);
+}
+
+</script></body>
+</html>
